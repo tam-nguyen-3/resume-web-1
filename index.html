@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="header">
+        <div id="header-in">
+            <div class="header-container">
+                <nav>
+                    <ul>
+                        <li><a href="#header">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#skill">Skills</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    
+        <div class="header-text">
+            <div class="container">
+                <div class="row">
+                    <div class="header-col-1">
+                        <h1>Hi, I'm <span>Tam Nguyen</span>!</h1>
+                        <p>I am a sophomore at Kenyon College majoring in Applied Mathematics and Economics. I'm enthusiastic about how data is used to solve multidisciplinary problems across different fields!</p>
+                    </div>
+                    <div class="header-col-2 shape-container">
+                        <img src="images/profile.jpeg" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+<!-- --------------About------------- -->
+
+    <div id="about">
+        <div class="container">
+            <div class="row">
+                <div class="about-col-1">
+                    <img src="images/profile_image.jpeg" alt="">
+                </div>
+
+                <div class="about-col-2">
+                    <div class="sub-title">
+                        <h1>About me</h1>
+                    </div>
+                    <div class="tab-titles">
+                        <p class="tab-links active-link" onclick="opentab('projects')">Projects</p>
+                        <p class="tab-links active-link" onclick="opentab('experience')">Experience</p>
+                        <p class="tab-links active-link" onclick="opentab('education')">Education</p>
+                    </div>
+
+                    <div class="tab-contents active-tab" id="projects">
+                        <ul>
+                            <li>
+                                <span><a href="https://www.canva.com/design/DAFa-NQ9DpY/a7LtFEJFYOIzOO1c3k7g3A/view?utm_content=DAFa-NQ9DpY&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton">YouTube Watch History Analytics</a></span>
+                                <br>
+                                Extracted personal YouTube watch history using Google YouTube API, Google Takeout. 
+                                <br>
+                                Performed data cleaning and analysis to recognize difference in watching behaviours, preferences, and habits of two persons.
+                            </li>
+                            <li>
+                                <span><a href="https://www.canva.com/design/DAFa-F7q-Oc/dkhSG5fqj_tMqIFnNBInZA/view?utm_content=DAFa-F7q-Oc&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton">NLP with R - Spiderman Reviews Analytics</a></span>
+                                <br>
+                                Performed sentiment analysis on 18,000+ reviews of all Spiderman-related movies.
+                                <br>
+                                Identified frequent bigrams and classified potential topics (TF-IDF, topicmodels).
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="tab-contents" id="experience">
+                        <ul>
+                            <li>
+                                <span>Economics Lead Tutor - Kenyon College</span>
+                                <br>
+                                Assist intro-level Economics students with questions and homework assignments.
+                            </li>
+                            <li><span>IPHS Grader - Kenyon College</span><br>Organize gradebook and grade 80+ students</li>
+                        </ul>
+                    </div>
+
+                    <div class="tab-contents" id="education">
+                        <ul>
+                            <li>
+                                <span>Kenyon College (BA) - Class of 2025</span>
+                                <br>
+                                Majors: Mathematics and Economics, Dean's List
+                        </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    
+<!-- --------------Skills-------------- -->
+
+<div id="skill">
+    <div class="sub-title" style="text-align: center;">
+        <h1>Skills</h1>
+    </div>
+    <div class="container">
+        <table>
+            <thead>
+                <tr>
+                    <th>R (Advanced)</th>
+                    <th>Python (Competent)</th>
+                    <th>Other languages</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>tidyverse/dplyr</td>
+                    <td>pandas</td>
+                    <td>SQL/MS SQL</td>
+                </tr>
+                <tr>
+                    <td>tidytext</td>
+                    <td>numpy</td>
+                    <td>C/C++</td>
+                </tr>
+                <tr>
+                    <td>tm</td>
+                    <td>matplotlib</td>
+                    <td>HTML</td>
+                </tr>
+                <tr>
+                    <td>httr</td>
+                    <td>scipy</td>
+                    <td>CSS</td>
+                </tr>
+                <tr>
+                    <td>stringr</td>
+                </tr>
+                <tr>
+                    <td>topicmodels</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+
+
+
+    <script>
+        var tablinks = document.getElementsByClassName("tab-links");
+        var tabcontents = document.getElementsByClassName("tab-contents");
+
+        function opentab(tabname){
+            for (tablink of tablinks){
+                tablink.classList.remove("active-link");
+            }
+
+            for (tabcontent of tabcontents){
+                tabcontent.classList.remove("active-tab");
+            }
+
+            event.currentTarget.classList.add("active-link");
+            document.getElementById(tabname).classList.add("active-tab");
+        }
+    </script>
+</body>
+</html>
